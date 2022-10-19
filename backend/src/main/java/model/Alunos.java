@@ -3,28 +3,34 @@ package model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import lombok.*;
 
 
-@Getter
-@Setter
+
 @Entity
-public class Alunos {
+public class Alunos{
 	
 	@Id
 	@GeneratedValue
 	private Integer matricula;
+	
+	private String nomeCompleto;
+	private String telefone;
+	private String endereco;
+	private String cpf;
+	private int turmaId;
+	private int idCurso;
+	
 	public Integer getMatricula() {
 		return matricula;
 	}
 	public void setMatricula(Integer matricula) {
 		this.matricula = matricula;
 	}
-	public String getNome_completo() {
-		return nome_completo;
+	public String getNomeCompleto() {
+		return nomeCompleto;
 	}
-	public void setNome_completo(String nome_completo) {
-		this.nome_completo = nome_completo;
+	public void setNomeCompleto(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
 	}
 	public String getTelefone() {
 		return telefone;
@@ -44,8 +50,16 @@ public class Alunos {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	private String nome_completo;
-	private String telefone;
-	private String endereco;
-	private String cpf;
+	public int getTurmaId() {
+		return turmaId;
+	}
+	public void setTurmaId(int turmaId) {
+		this.turmaId = turmaId;
+	}
+	public int getIdCurso() {
+		return idCurso;
+	}
+	public void setIdCurso(int idCurso) {
+		this.idCurso = idCurso;
+	}
 }

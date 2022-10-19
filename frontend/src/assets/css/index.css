@@ -115,9 +115,27 @@
 
 /*Dashboard CSS - Finish*/
 
-/*Voters CSS - Start*/
+/*Alunos CSS - Start*/
 
+.div-actions-icons {
+    color: dodgerblue;
+    padding: 10px;
+    font-size: 25px;
+    border: none;
+    background-color: transparent;
+}
 
+.del:hover {
+    color: red;
+}
+
+.view:hover {
+    color: green;
+}
+
+.edit:hover {
+    color: rgb(30, 255, 236);
+}
 
 .table, .table-th, .table-td{
     text-align: center;
@@ -144,33 +162,34 @@
 
 }
 
-/*Voters Add new CSS - Start*/
+/*Alunos Add new CSS - Start*/
 
-
-
-/*Voters Add new CSS - Finish*/
-
-.btn {
-    display: inline-block;
-    align-items: center;
-    width: 100%;
-    justify-content: center;
-    margin-top: 30px;
+.btn-cancelarAdd {
+    width: 200px;
+    height: 45px;
+    margin-top: 100px;
+    margin-left: 50px;
+    background-color: red !important;
+    color: #fff !important;
+    border: 3px solid #000 !important;
+    border-color: #000 !important;
 }
 
-
-.btn-add-new-voter{
-    padding: 10px;
-    border-radius: 5px;
-    background-color: lightgreen;
-    transition: background-color 800ms, border-radius 300ms, scale 500ms;
-    
+.btn-addAluno {
+    width: 200px;
+    height: 45px;
+    margin-top: 100px;
+    margin-left: 38%;
+    background-color: green !important;
+    color: #fff !important;
+    border: 3px solid #000 !important;
+    border-color: #000 !important;
 }
 
-.btn-add-new-voter:hover {
-    background-color: rgb(89, 223, 89);
-    border-radius: 15px;
-    scale: 1.5;
-}
+/*Alunos Add new CSS - Finish*/
 
-/*Voters CSS - Finish*/
+
+
+
+/* CSS - Start*/
+/* CSS - Finish*/

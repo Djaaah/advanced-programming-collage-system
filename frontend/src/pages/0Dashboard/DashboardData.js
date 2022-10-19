@@ -1,9 +1,21 @@
+import {useState, useEffect} from 'react'
+import {getAlunos} from "../../service"
+
+
 export const DashboardData = () => {
+    const [qtdMatriculados, setQtdMatriculados] = useState([]);
+
+    useEffect(() => {
+        getAlunos(setQtdMatriculados);
+    }, [])
+
+
+
     return (
     [
         {
             title: 'Alunos Matriculados',
-            data: '6',
+            data: qtdMatriculados.length,
         },
         {
             title: 'Alunos Prospectados',

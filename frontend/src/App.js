@@ -7,6 +7,8 @@ import Dashboard from './pages/0Dashboard/Dashboard';
 
 import Alunos from './pages/1Alunos/Alunos';
 import AddNewAluno from './pages/1Alunos/AddNewAluno';
+import ViewAluno from './pages/1Alunos/ViewAluno';
+import EditAluno from './pages/1Alunos/EditAluno';
 
 import AlunosProspectados from './pages/2Alunos_Prospectados/AlunosProspectados';
 import AddNewAlunoProspectado from './pages/2Alunos_Prospectados/AddNewAlunoProspectado';
@@ -39,6 +41,8 @@ function App() {
           {/* Páginas de Alunos */}
           <Route path='/alunos' exact element={<Alunos/>}/>
           <Route path='/add/new_aluno' exact element={<AddNewAluno/>}/>
+          <Route path={`/view_aluno/:matricula`} exact element={<ViewAluno/>}/>
+          <Route path={`/edit_aluno/:matricula`} exact element={<EditAluno/>}/>
           {/* Páginas de Alunos */}
 
           {/* Páginas de Alunos Prospectados */}

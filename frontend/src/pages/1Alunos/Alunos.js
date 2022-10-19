@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import Axios from 'axios'
-
+import { Link, useParams } from 'react-router-dom'
+import { getAlunos, deletarAlunos } from "../../service"
+import * as BsIcons from 'react-icons/bs';
+import * as FiIcons from 'react-icons/fi';
+import * as FaIcons from 'react-icons/fa';
 
 function Alunos() {
-
   const [alunos, setAlunos] = useState([]);
 
+  const { matricula } = useParams();
+
   useEffect(() => {
-    loadAlunos();
-  }, []);
-
-  const loadAlunos = async () => {
-    const result = await Axios.get("http://localhost:8080/alunos")
-    setAlunos(result.data)
-  }
-
+      getAlunos(setAlunos);
+  }, [])
 
   return (
     <div className='conteudo'>
@@ -25,24 +22,32 @@ function Alunos() {
         <table className='table border shadow'>
           <thead>
           <tr>
-            <th className='table-th' scope="col">Matrícula</th>
+            <th className='table-th'>Matrícula</th>
             <th className='table-th'>Nome Completo</th>
             <th className='table-th'>Telefone</th>
             <th className='table-th'>Endereço</th>
             <th className='table-th'>CPF</th>
-            <th className='table-th'>Ação</th>
+            <th className='table-th'></th>
           </tr>
           </thead>
           <tbody>
             {
               alunos.map((alunos, index) => {
                 return(
-                <tr>
-                  <td className='table-td' key={index}>{alunos.matricula}</td>
-                  <td className='table-td'>{alunos.nome_completo}</td>
+                <tr key={index}>
+                  <td className='table-td'>{alunos.matricula}</td>
+                  <td className='table-td'>{alunos.nomeCompleto}</td>
                   <td className='table-td'>{alunos.telefone}</td>
                   <td className='table-td'>{alunos.endereco}</td>
                   <td className='table-td'>{alunos.cpf}</td>
+                  <td className='table-td'>
+                    <div className='div-actions'>
+                      <button onClick={() => deletarAlunos(alunos.matricula, setAlunos)} className="div-actions-icons del" title="Deletar Aluno"><BsIcons.BsTrash/></button>
+                      <Link to={`/edit_aluno/${alunos.matricula}`} className="div-actions-icons edit" title="Editar Aluno"><FiIcons.FiEdit/></Link>
+                      <Link to={`/view_aluno/${alunos.matricula}`} className="div-actions-icons view" title="Visualizar Aluno"><FaIcons.FaRegEye/></Link>
+                    </div>
+                    
+                  </td>
                 </tr>
                 )
               })
@@ -56,4 +61,4 @@ function Alunos() {
   )
 }
 
-export default Alunos
+export default Alunos;
