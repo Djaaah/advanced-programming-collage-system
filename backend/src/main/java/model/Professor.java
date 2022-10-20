@@ -14,6 +14,7 @@ public class Professor{
 	private String nome;
 	private String telefone;
 	private Float valorHoraAula;
+	private int idTurma;
 	
 	public Integer getIdProfessor() {
 		return idProfessor;
@@ -38,5 +39,11 @@ public class Professor{
 	}
 	public void setValorHoraAula(Float valorHoraAula) {
 		this.valorHoraAula = valorHoraAula;
+	}
+	public int getIdTurma() {
+		return idTurma;
+	}
+	public void setIdTurma(int idTurma) {
+		this.idTurma = idTurma;
 	}
 }

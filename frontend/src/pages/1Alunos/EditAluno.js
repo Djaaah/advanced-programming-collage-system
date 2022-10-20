@@ -15,10 +15,11 @@ const EditAluno = () => {
         nomeCompleto: "",
         cpf: "",
         endereco: "",
-        telefone: "", 
+        telefone: "",
+        idTurma: "",
     });
 
-    const { nomeCompleto, cpf, endereco, telefone } = aluno;
+    const { nomeCompleto, cpf, endereco, telefone, idTurma } = aluno;
 
     const onInputChange = (e) => {
         setAluno({ ...aluno, [e.target.id]: e.target.value });

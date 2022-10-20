@@ -1,6 +1,5 @@
 package controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +22,6 @@ public class AlunosController {
 	
 	@Autowired
 	private AlunosRepository alunosRepository;
-	private TurmaRepository turmaRepository;
-	private CursoRepository cursoRepository;
-	
 	
 	@PostMapping("/add/new_aluno/add")
 	Alunos newAluno(@RequestBody Alunos newAluno) {
@@ -34,16 +30,7 @@ public class AlunosController {
 
 	@GetMapping("/alunos")
 	List<Alunos> getAllAlunos(){
-		
-		List<Object> turmas = turmaRepository.findAll();
-		List<Alunos> alunos = alunosRepository.findAll();
-		
-		for (int i = 0; i < alunos.size(); i++) {
-			if(alunos.get(i).getTurmaId() == turmas.get(i).getIdTurma()) {
-				alunos.set(i, turmas.get(i).getIdTurma());
-		}
-	}
-		return alunos;
+		return alunosRepository.findAll();
 	}
 	
 	@GetMapping("/alunos/{matricula}")
@@ -58,7 +45,7 @@ public class AlunosController {
 			alunos.setTelefone(newAluno.getTelefone());
 			alunos.setEndereco(newAluno.getEndereco());
 			alunos.setCpf(newAluno.getCpf());
-			alunos.setTurmaId(newAluno.getTurmaId());
+			alunos.setIdTurma(newAluno.getIdTurma());
 			return alunosRepository.save(alunos);
 		}).orElseThrow(() -> new AlunoNotFoundException(matricula));
 	}

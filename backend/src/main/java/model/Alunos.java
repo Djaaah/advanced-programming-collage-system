@@ -17,8 +17,7 @@ public class Alunos{
 	private String telefone;
 	private String endereco;
 	private String cpf;
-	private int turmaId;
-	private int idCurso;
+	private int idTurma;
 	
 	public Integer getMatricula() {
 		return matricula;
@@ -50,16 +49,10 @@ public class Alunos{
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public int getTurmaId() {
-		return turmaId;
+	public int getIdTurma() {
+		return idTurma;
 	}
-	public void setTurmaId(int turmaId) {
-		this.turmaId = turmaId;
-	}
-	public int getIdCurso() {
-		return idCurso;
-	}
-	public void setIdCurso(int idCurso) {
-		this.idCurso = idCurso;
+	public void setIdTurma(int turmaId) {
+		this.idTurma = turmaId;
 	}
 }

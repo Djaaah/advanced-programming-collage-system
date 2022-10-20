@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import exception.AlunoNotFoundException;
 import model.*;
 import repository.*;
 
@@ -45,8 +45,22 @@ public class CursoController {
 			curso.setChTotal(newCurso.getChTotal());
 			curso.setTurno(newCurso.getTurno());
 			curso.setValor(newCurso.getValor());
-			
+			curso.setSeg(newCurso.getSeg());
+			curso.setTer(newCurso.getTer());
+			curso.setQua(newCurso.getQua());
+			curso.setQui(newCurso.getQui());
+			curso.setSex(newCurso.getSex());
+			curso.setSab(newCurso.getSab());
 			return cursoRepository.save(curso);
 		}).orElseThrow(/*() -> new CursoNotFoundException(idCurso)*/);
+	}
+	
+	@DeleteMapping("/curso/{idCurso}")
+	String deleteCurso(@PathVariable("idCurso") Integer idCurso) {
+		/*if(!turmaRepository.existsById(idCurso)) {
+			throw new TurmaNotFoundException(idCurso);
+		}*/
+		
+		return "Curso de ID: " + idCurso + " Foi deletado com Sucesso!.";
 	}
 }

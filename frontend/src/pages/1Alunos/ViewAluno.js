@@ -12,7 +12,8 @@ const ViewAluno = () => {
         nomeCompleto: "",
         cpf: "",
         endereco: "",
-        telefone: "", 
+        telefone: "",
+        idTurma: "",
     });
 
     useEffect(() => {

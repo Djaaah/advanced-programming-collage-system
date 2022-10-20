@@ -26,3 +26,9 @@ export const deletarAlunos = async (matricula, setAlunos) => {
     getAlunos(setAlunos)
 }
 
+/* Controller Turmas*/
+
+export const getTurmas = async (setTurmas) => {
+    const result = await Axios.get("http://localhost:8080/turmas")
+    setTurmas(result.data)
+}

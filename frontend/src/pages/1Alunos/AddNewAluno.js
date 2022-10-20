@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate  } from 'react-router-dom'
 import InputMask from 'react-input-mask';
-import { CursosData } from '../4Cursos/CursosData';
-import { getAlunos } from "../../service"
-import { inserirDadosAlunos } from "../../service"
+import { TurmasData } from '../5Turmas/TurmasData';
+import { getAlunos, getTurmas, inserirDadosAlunos } from "../../service"
 
 
 const AddNewAluno = () => {
@@ -12,14 +11,17 @@ const AddNewAluno = () => {
 
     const [alunos, setAlunos] = useState([]);
 
+    const [turmas, setTurmas] = useState([]);
+
     const [aluno, setAluno] = useState({
         nomeCompleto: "",
         cpf: "",
         endereco: "",
-        telefone: "", 
+        telefone: "",
+        idTurma: "", 
     });
 
-    const { nomeCompleto, cpf, endereco, telefone } = aluno;
+    const { nomeCompleto, cpf, endereco, telefone, idTurma } = aluno;
 
     const onInputChange = (e) => {
         setAluno({ ...aluno, [e.target.id]: e.target.value });
@@ -30,7 +32,9 @@ const AddNewAluno = () => {
         navigate('/alunos');
     }
 
+
     useEffect(() => {
+        getTurmas(setTurmas)
         getAlunos(setAlunos);
     }, [])
 
@@ -46,14 +50,14 @@ const AddNewAluno = () => {
     <div className='row'>
         <div className="col-3">
             <label htmlFor="matricula-aluno">Matrícula</label>
-            <input type="number" className="form-control" id="matricula-aluno" value={alunos.length === 0 ? "" : alunos[alunos.length-1].matricula+1} placeholder="Matrícula" disabled required/>
+            <input type="number" className="form-control" id="matricula-aluno"  value={alunos.length === 0 ? "" : alunos[alunos.length-1].matricula+1} placeholder="Matrícula" disabled required/>
         </div>
         <div className="col-3">
-            <label htmlFor="curso-aluno">Curso</label>
-            <select className="form-control">
-                {CursosData.map((item, index) => {
+            <label htmlFor="curso-aluno">ID da Turma {/*Ficará aqui o ID da turma, apenas selecionarei a turma ex: GRA999999xNNA  x é o periodo do curso*/}</label>
+            <select id="idTurma" onChange={e => onInputChange(e)} className="form-control">
+                {turmas.map((item, index) => {
                     return(
-                        <option key={index} value={item.value}>{item.titleCurso}</option>
+                        <option key={index} value={item.idTurma}>{item.idTurma}</option>
                     )
                 })}
             </select>
@@ -65,7 +69,7 @@ const AddNewAluno = () => {
     <div className='row'> 
         <div className="col">
             <label htmlFor="nome-completo">Nome Completo</label>
-            <input type="text" className="form-control"  onChange={(e) => onInputChange(e)} id="nomeCompleto" placeholder="Nome Completo" maxLength="45" required/>
+            <input type="text" className="form-control" onChange={(e) => onInputChange(e)} id="nomeCompleto" placeholder="Nome Completo" maxLength="45" required/>
         </div>
         
         <div className="col">
