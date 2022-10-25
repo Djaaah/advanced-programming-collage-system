@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Settings() {
+const Settings = () => {
   return (
     <div className='conteudo'>
       <h1>Settings</h1>

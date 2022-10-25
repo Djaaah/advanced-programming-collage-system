@@ -1,7 +1,7 @@
 import React from 'react'
 import { DashboardData } from './DashboardData';
 
-function Dashboard() {
+const Dashboard = () => {
   return (
     <>
       <div className='conteudo'>

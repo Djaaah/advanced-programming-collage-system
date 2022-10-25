@@ -1,6 +1,6 @@
 import React from 'react'
 
-function NotFoundPage() {
+const NotFoundPage = () => {
   return (
     <div className='conteudo'>
       <h1>NotFoundPage</h1>

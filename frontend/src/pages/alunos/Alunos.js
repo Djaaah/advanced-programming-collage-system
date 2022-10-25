@@ -5,7 +5,7 @@ import * as BsIcons from 'react-icons/bs';
 import * as FiIcons from 'react-icons/fi';
 import * as FaIcons from 'react-icons/fa';
 
-function Alunos() {
+const Alunos = () => {
   const [alunos, setAlunos] = useState([]);
 
   const { matricula } = useParams();

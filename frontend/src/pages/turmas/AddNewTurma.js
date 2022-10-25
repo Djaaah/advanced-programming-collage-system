@@ -1,6 +1,6 @@
 import React from 'react'
 
-function AddNewTurma() {
+const AddNewTurma = () => {
   return (
     <div>AddNewTurma</div>
   )

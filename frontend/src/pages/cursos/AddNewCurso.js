@@ -1,6 +1,6 @@
 import React from 'react'
 
-function AddNewCurso() {
+const AddNewCurso = () => {
   return (
     <div>AddNewCurso</div>
   )

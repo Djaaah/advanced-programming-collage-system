@@ -1,6 +1,6 @@
 import React from 'react'
 
-function AddNewAlunoProspectado() {
+const AddNewAlunoProspectado = () => {
   return (
     <div>AddNewAlunoProspectado</div>
   )

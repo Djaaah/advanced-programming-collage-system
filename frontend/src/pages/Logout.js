@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Logout() {
+const Logout = () => {
   return (
     <div className='conteudo'>
       <h1>Logout</h1>
