@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { NavbarData } from './NavbarData';
 import { IconContext } from 'react-icons';
 
-
 const Navbar = () => {
     return (
         <>

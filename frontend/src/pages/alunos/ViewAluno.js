@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import InputMask from 'react-input-mask';
-import { CursosData } from '../4Cursos/CursosData';
+import { CursosData } from '../cursos/CursosData';
 import { loadAluno } from "../../service"
 
 const ViewAluno = () => {
