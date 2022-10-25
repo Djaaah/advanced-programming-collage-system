@@ -3,7 +3,7 @@ import React from 'react'
 function NotFoundPage() {
   return (
     <div className='conteudo'>
-        <h1>NotFoundPage</h1>
+      <h1>NotFoundPage</h1>
     </div>
   )
 }

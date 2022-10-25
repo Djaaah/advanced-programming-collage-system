@@ -1,99 +1,100 @@
-/*Global CSS Rules - Start*/
+/* Global CSS Rules - Start */
 
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: 'Poppins', sans-serif;
-    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
 
-    .conteudo {
-        margin-left: 300px;
-        overflow-wrap: break-word;
-        padding: 10px;
-    }
-    
+.conteudo {
+    margin-left: 300px;
+    overflow-wrap: break-word;
+    padding: 10px;
+}
 
-    .page-title {
-        text-align: center;
-        font-weight: 500;
-        font-size: 60px;
-    }
 
-/*Global CSS Rules - Finish*/
+.page-title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 60px;
+}
 
-/*Navbar CSS - Start*/
+/* Global CSS Rules - Finish */
 
-    .name-project{
-        color: #fff;
-        font-size: 1.3rem;
-        font-weight: 500;
-    }
+/* Navbar CSS - Start */
 
-    .navbar {
-        background-color: #060b25;
-        height: 80px;
-        display: flex;
-        justify-content: start;
-        align-items: center;
-    }
+.name-project {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
 
-    .nav-menu {
-        background-color: #060b25;
-        width: 300px;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        position: fixed;
-        top: 0;
-    }
+.navbar {
+    background-color: #060b25;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
 
-    .nav-text {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        list-style: none;
-        height: 60px;
-    }
+.nav-menu {
+    background-color: #060b25;
+    width: 300px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+}
 
-    .nav-text a {
-        text-decoration: none;
-        color: #F5F5F5F5;
-        font-size: 18px;
-        width: 95%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        padding: 0 16px;
-        border-radius: 4px;
-    }
+.nav-text {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    list-style: none;
+    height: 60px;
+}
 
-    .nav-text a:hover {
-        background-color: #1A83FF;
-        color: #fff;
-    }
+.nav-text a {
+    text-decoration: none;
+    color: #F5F5F5F5;
+    font-size: 18px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+}
 
-    .nav-menu-items {
-        width: 100%;
-    }
-    .navbar-title {
-        background-color: #060b26;
-        width: 100%;
-        height: 80px;
-        display: flex;
-        justify-content: start;
-        align-items: center;
-    }
+.nav-text a:hover {
+    background-color: #1A83FF;
+    color: #fff;
+}
 
-    span {
-        margin-left: 16px;
-    }
+.nav-menu-items {
+    width: 100%;
+}
 
-/*Navbar CSS - Finish*/
+.navbar-title {
+    background-color: #060b26;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
 
-/*Dashboard CSS - Start*/
+span {
+    margin-left: 16px;
+}
+
+/* Navbar CSS - Finish */
+
+/* Dashboard CSS - Start */
 
 .dashboard-card {
     border: 2px solid #000;
@@ -105,17 +106,14 @@
     font-size: 30px;
 }
 
-.dashline{
+.dashline {
     background: #000;
     height: 5px;
 }
 
+/* Dashboard CSS - Finish */
 
-
-
-/*Dashboard CSS - Finish*/
-
-/*Alunos CSS - Start*/
+/* Alunos CSS - Start */
 
 .div-actions-icons {
     color: dodgerblue;
@@ -137,7 +135,9 @@
     color: rgb(30, 255, 236);
 }
 
-.table, .table-th, .table-td{
+.table,
+.table-th,
+.table-td {
     text-align: center;
     padding: 10px;
     font-size: 15px;
@@ -162,7 +162,7 @@
 
 }
 
-/*Alunos Add new CSS - Start*/
+/* Alunos Add new CSS - Start */
 
 .btn-cancelarAdd {
     width: 200px;
@@ -186,10 +186,7 @@
     border-color: #000 !important;
 }
 
-/*Alunos Add new CSS - Finish*/
-
-
-
+/* Alunos Add new CSS - Finish */
 
 /* CSS - Start*/
 /* CSS - Finish*/

@@ -1,6 +1,5 @@
 import Axios from "axios";
 
-
 /* Controller de Alunos */
 
 export const getAlunos = async (setAlunos) => {

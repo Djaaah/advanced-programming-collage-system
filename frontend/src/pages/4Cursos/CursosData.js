@@ -1,6 +1,3 @@
-import React from 'react';
-
-
 export const CursosData = [
     {
         titleCurso: 'Ciência da Computação',
@@ -17,5 +14,5 @@ export const CursosData = [
     {
         titleCurso: 'Sistema da Informação',
         value: 'sistema da informação'
-    },
+    }
 ]

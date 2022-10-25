@@ -11,16 +11,16 @@ function Alunos() {
   const { matricula } = useParams();
 
   useEffect(() => {
-      getAlunos(setAlunos);
+    getAlunos(setAlunos);
   }, [])
 
   return (
     <div className='conteudo'>
       <h1 className='page-title'>Alunos</h1>
-      <hr className='dashline'/>
-        <Link className='btn-add-new' to='/add/new_aluno'>Novo Aluno</Link>
-        <table className='table border shadow'>
-          <thead>
+      <hr className='dashline' />
+      <Link className='btn-add-new' to='/add/new_aluno'>Novo Aluno</Link>
+      <table className='table border shadow'>
+        <thead>
           <tr>
             <th className='table-th'>Matrícula</th>
             <th className='table-th'>Nome Completo</th>
@@ -29,11 +29,11 @@ function Alunos() {
             <th className='table-th'>CPF</th>
             <th className='table-th'></th>
           </tr>
-          </thead>
-          <tbody>
-            {
-              alunos.map((alunos, index) => {
-                return(
+        </thead>
+        <tbody>
+          {
+            alunos.map((alunos, index) => {
+              return (
                 <tr key={index}>
                   <td className='table-td'>{alunos.matricula}</td>
                   <td className='table-td'>{alunos.nomeCompleto}</td>
@@ -42,21 +42,21 @@ function Alunos() {
                   <td className='table-td'>{alunos.cpf}</td>
                   <td className='table-td'>
                     <div className='div-actions'>
-                      <button onClick={() => deletarAlunos(alunos.matricula, setAlunos)} className="div-actions-icons del" title="Deletar Aluno"><BsIcons.BsTrash/></button>
-                      <Link to={`/edit_aluno/${alunos.matricula}`} className="div-actions-icons edit" title="Editar Aluno"><FiIcons.FiEdit/></Link>
-                      <Link to={`/view_aluno/${alunos.matricula}`} className="div-actions-icons view" title="Visualizar Aluno"><FaIcons.FaRegEye/></Link>
+                      <button onClick={() => deletarAlunos(alunos.matricula, setAlunos)} className="div-actions-icons del" title="Deletar Aluno"><BsIcons.BsTrash /></button>
+                      <Link to={`/edit_aluno/${alunos.matricula}`} className="div-actions-icons edit" title="Editar Aluno"><FiIcons.FiEdit /></Link>
+                      <Link to={`/view_aluno/${alunos.matricula}`} className="div-actions-icons view" title="Visualizar Aluno"><FaIcons.FaRegEye /></Link>
                     </div>
-                    
+
                   </td>
                 </tr>
-                )
-              })
-            }
-          </tbody>
-            
-          
-    
-        </table>
+              )
+            })
+          }
+        </tbody>
+
+
+
+      </table>
     </div>
   )
 }
