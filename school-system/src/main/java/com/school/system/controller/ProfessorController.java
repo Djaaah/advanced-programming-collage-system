@@ -19,42 +19,45 @@ import com.school.system.model.*;
 @RestController
 @CrossOrigin("http://localhost:3000")
 public class ProfessorController {
-	
+
 	@Autowired
 	private ProfessorRepository professorRepository;
-	
-	@PostMapping("/add/new_prof/add")
-	Professor newProfessor(@RequestBody Professor newProfessor) {
-		return professorRepository.save(newProfessor);
+
+	@PostMapping("/professores")
+	public Professor addNewProfessor(@RequestBody Professor professor) {
+		return professorRepository.save(professor);
 	}
-	
+
 	@GetMapping("/professores")
-	List<Professor> getAllProfessor(){
+	public List<Professor> getAllProfessores() {
 		return professorRepository.findAll();
 	}
-	
-	@GetMapping("/professor/{idProfessor}")
-	Professor getProfessorById(@PathVariable Integer idProfessor) {
-		return professorRepository.findById(idProfessor).orElseThrow(/*() -> new ProfessorNotFoundException(idTurma)*/);
+
+	@GetMapping("/professores/{idProfessor}")
+	public Professor getProfessorById(@PathVariable Integer idProfessor) {
+		return professorRepository.findById(idProfessor)
+				.orElseThrow(/* () -> new ProfessorNotFoundException(idTurma) */);
 	}
-	
-	@PutMapping("/professor/{idProfessor}")
-	Professor updateProfessor(@RequestBody Professor newProfessor, @PathVariable Integer idProfessor) {
+
+	@PutMapping("/professores/{idProfessor}")
+	public Professor updateProfessor(@RequestBody Professor newProfessor, @PathVariable Integer idProfessor) {
 		return professorRepository.findById(idProfessor).map(professor -> {
 			professor.setNome(newProfessor.getNome());
 			professor.setTelefone(newProfessor.getTelefone());
 			professor.setValorHoraAula(newProfessor.getValorHoraAula());
 			professor.setIdTurma(newProfessor.getIdTurma());
 			return professorRepository.save(professor);
-		}).orElseThrow(/*() -> new ProfessorNotFoundException(idProfessor)*/);
+		}).orElseThrow(/* () -> new ProfessorNotFoundException(idProfessor) */);
 	}
-	
-	@DeleteMapping("/professor/{idProfessor}")
-	String deleteProfessor(@PathVariable("idProfessor") Integer idProfessor) {
-		/*if(!turmaRepository.existsById(idProfessor)) {
-			throw new ProfessorNotFoundException(idProfessor);
-		}*/
-		
-		return "Professor de ID: " + idProfessor +" Foi deletado com Sucesso!.";
+
+	@DeleteMapping("/professores/{idProfessor}")
+	public String deleteProfessor(@PathVariable("idProfessor") Integer idProfessor) {
+		/*
+		 * if(!turmaRepository.existsById(idProfessor)) {
+		 * throw new ProfessorNotFoundException(idProfessor);
+		 * }
+		 */
+
+		return "Professor de ID: " + idProfessor + " Foi deletado com Sucesso!.";
 	}
-}	
+}

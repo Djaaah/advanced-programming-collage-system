@@ -18,41 +18,43 @@ import com.school.system.model.*;
 @RestController
 @CrossOrigin("http://localhost:3000")
 public class TurmaController {
-	
+
 	@Autowired
 	private TurmaRepository turmaRepository;
-	
-	@PostMapping("/add/new_turma/add")
-	Turma newTurma(@RequestBody Turma newTurma) {
-		return turmaRepository.save(newTurma);
+
+	@PostMapping("/turmas")
+	public Turma addNewTurma(@RequestBody Turma turma) {
+		return turmaRepository.save(turma);
 	}
-	
+
 	@GetMapping("/turmas")
-	List<Turma> getAllTurmas(){
+	public List<Turma> getAllTurmas() {
 		return turmaRepository.findAll();
 	}
-	
-	@GetMapping("/turma/{idTurma}")
-	Turma getTurmaById(@PathVariable Integer idTurma) {
-		return turmaRepository.findById(idTurma).orElseThrow(/*() -> new TurmaNotFoundException(idTurma)*/);
+
+	@GetMapping("/turmas/{idTurma}")
+	public Turma getTurmaById(@PathVariable Integer idTurma) {
+		return turmaRepository.findById(idTurma).orElseThrow(/* () -> new TurmaNotFoundException(idTurma) */);
 	}
-	
-	@PutMapping("/turma/{idTurma}")
-	Turma updateTurma(@RequestBody Turma newTurma, @PathVariable Integer idTurma) {
+
+	@PutMapping("/turmas/{idTurma}")
+	public Turma updateTurma(@RequestBody Turma newTurma, @PathVariable Integer idTurma) {
 		return turmaRepository.findById(idTurma).map(turma -> {
 			turma.setIdCurso(newTurma.getIdCurso());
 			turma.setIdProfessor(newTurma.getIdProfessor());
 			turma.setValor(newTurma.getValor());
 			return turmaRepository.save(turma);
-		}).orElseThrow(/*() -> new TurmaNotFoundException(idTurma)*/);
+		}).orElseThrow(/* () -> new TurmaNotFoundException(idTurma) */);
 	}
-	
-	@DeleteMapping("/turma/{idTurma}")
-	String deleteTurma(@PathVariable("idTurma") Integer idTurma) {
-		/*if(!turmaRepository.existsById(idTurma)) {
-			throw new TurmaNotFoundException(idTurma);
-		}*/
-		
-		return "Turma de ID: " + idTurma +" Foi deletada com Sucesso!.";
+
+	@DeleteMapping("/turmas/{idTurma}")
+	public String deleteTurma(@PathVariable("idTurma") Integer idTurma) {
+		/*
+		 * if(!turmaRepository.existsById(idTurma)) {
+		 * throw new TurmaNotFoundException(idTurma);
+		 * }
+		 */
+
+		return "Turma de ID: " + idTurma + " Foi deletada com Sucesso!.";
 	}
 }

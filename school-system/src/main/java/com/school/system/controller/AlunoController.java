@@ -19,27 +19,27 @@ import com.school.system.repository.*;
 @RestController
 @CrossOrigin("http://localhost:3000")
 public class AlunoController {
-	
+
 	@Autowired
 	private AlunoRepository alunosRepository;
-	
-	@PostMapping("/add/new_aluno/add")
-	Aluno newAluno(@RequestBody Aluno newAluno) {
-		return alunosRepository.save(newAluno);
+
+	@PostMapping("/alunos")
+	public Aluno addNewAluno(@RequestBody Aluno aluno) {
+		return alunosRepository.save(aluno);
 	}
 
 	@GetMapping("/alunos")
-	List<Aluno> getAllAlunos(){
+	public List<Aluno> getAllAlunos() {
 		return alunosRepository.findAll();
 	}
-	
+
 	@GetMapping("/alunos/{matricula}")
-	Aluno getAlunosById(@PathVariable Integer matricula) {
+	public Aluno getAlunosById(@PathVariable Integer matricula) {
 		return alunosRepository.findById(matricula).orElseThrow(() -> new AlunoNotFoundException(matricula));
 	}
-	
+
 	@PutMapping("/alunos/{matricula}")
-	Aluno updateAlunos(@RequestBody Aluno newAluno, @PathVariable Integer matricula) {	
+	public Aluno updateAlunos(@RequestBody Aluno newAluno, @PathVariable Integer matricula) {
 		return alunosRepository.findById(matricula).map(alunos -> {
 			alunos.setNomeCompleto(newAluno.getNomeCompleto());
 			alunos.setTelefone(newAluno.getTelefone());
@@ -49,15 +49,15 @@ public class AlunoController {
 			return alunosRepository.save(alunos);
 		}).orElseThrow(() -> new AlunoNotFoundException(matricula));
 	}
-	
+
 	@DeleteMapping("/alunos/{matricula}")
-	String deleteAlunos(@PathVariable("matricula") Integer matricula) {
-		if(!alunosRepository.existsById(matricula)) {
+	public String deleteAlunos(@PathVariable("matricula") Integer matricula) {
+		if (!alunosRepository.existsById(matricula)) {
 			throw new AlunoNotFoundException(matricula);
 		}
-		
+
 		alunosRepository.deleteById(matricula);
-		return "Student with matricula: " + matricula +" has been Deleted Success.";
-		
+
+		return "Student with matricula: " + matricula + " has been Deleted Success.";
 	}
 }
