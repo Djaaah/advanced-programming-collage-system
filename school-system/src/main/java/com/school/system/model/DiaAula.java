@@ -2,15 +2,16 @@ package com.school.system.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class DiaAula {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer idCurso;
-	
+
 	private Integer dataAula;
 
 	public Integer getIdCurso() {
@@ -28,6 +29,5 @@ public class DiaAula {
 	public void setDataAula(Integer dataAula) {
 		this.dataAula = dataAula;
 	}
-	
-	
+
 }

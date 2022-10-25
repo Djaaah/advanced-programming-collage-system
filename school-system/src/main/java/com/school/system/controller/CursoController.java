@@ -21,24 +21,24 @@ public class CursoController {
 
 	@Autowired
 	private CursoRepository cursoRepository;
-	
+
 	@PostMapping("/add/new_curso/add")
 	Curso newCurso(@RequestBody Curso newCurso) {
 		return cursoRepository.save(newCurso);
 	}
-	
+
 	@GetMapping("/cursos")
-	List<Curso> getAllCursos(){
+	List<Curso> getAllCursos() {
 		return cursoRepository.findAll();
 	}
-	
+
 	@GetMapping("/curso/{idCurso}")
 	Curso getCursoById(@PathVariable Integer idCurso) {
-		return cursoRepository.findById(idCurso).orElseThrow(/*() -> new CursoNotFoundException(idCurso)*/);
+		return cursoRepository.findById(idCurso).orElseThrow(/* () -> new CursoNotFoundException(idCurso) */);
 	}
-	
+
 	@PutMapping("/curso/{idCurso}")
-	Curso updateCurso(@RequestBody Curso newCurso, @PathVariable Integer idCurso) {	
+	Curso updateCurso(@RequestBody Curso newCurso, @PathVariable Integer idCurso) {
 		return cursoRepository.findById(idCurso).map(curso -> {
 			curso.setNomeCurso(newCurso.getNomeCurso());
 			curso.setChAula(newCurso.getChAula());
@@ -52,15 +52,17 @@ public class CursoController {
 			curso.setSex(newCurso.getSex());
 			curso.setSab(newCurso.getSab());
 			return cursoRepository.save(curso);
-		}).orElseThrow(/*() -> new CursoNotFoundException(idCurso)*/);
+		}).orElseThrow(/* () -> new CursoNotFoundException(idCurso) */);
 	}
-	
+
 	@DeleteMapping("/curso/{idCurso}")
 	String deleteCurso(@PathVariable("idCurso") Integer idCurso) {
-		/*if(!turmaRepository.existsById(idCurso)) {
-			throw new TurmaNotFoundException(idCurso);
-		}*/
-		
+		/*
+		 * if(!turmaRepository.existsById(idCurso)) {
+		 * throw new TurmaNotFoundException(idCurso);
+		 * }
+		 */
+
 		return "Curso de ID: " + idCurso + " Foi deletado com Sucesso!.";
 	}
 }
