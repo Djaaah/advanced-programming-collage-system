@@ -1,11 +1,11 @@
-package model;
+package com.school.system.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Professor{
+public class Professor {
 	
 	@Id
 	@GeneratedValue

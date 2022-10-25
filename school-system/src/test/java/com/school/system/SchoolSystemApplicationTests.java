@@ -1,10 +1,10 @@
-package com.backend.uninassau;
+package com.school.system;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BackendApplicationTests {
+class SchoolSystemApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,4 +1,4 @@
-package model;
+package com.school.system.model;
 
 import java.util.Date;
 

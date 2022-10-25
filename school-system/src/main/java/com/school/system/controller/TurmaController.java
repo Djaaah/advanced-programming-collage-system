@@ -1,4 +1,4 @@
-package controller;
+package com.school.system.controller;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import repository.*;
-import model.*;
+import com.school.system.repository.*;
+import com.school.system.model.*;
 
 @RestController
 @CrossOrigin("http://localhost:3000")

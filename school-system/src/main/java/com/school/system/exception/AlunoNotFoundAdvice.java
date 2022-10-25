@@ -1,4 +1,4 @@
-package exception;
+package com.school.system.exception;
 
 import java.util.HashMap;
 import java.util.Map;
