@@ -1,26 +1,26 @@
-import Navbar from './components/Sidebar/Navbar';
+import Navbar from './components/sidebar/Navbar';
 import './assets/js/main.js';
 import './assets/css/index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Dashboard from './pages/0Dashboard/Dashboard';
+import Dashboard from './pages/dashboard/Dashboard';
 
-import Alunos from './pages/1Alunos/Alunos';
-import AddNewAluno from './pages/1Alunos/AddNewAluno';
-import ViewAluno from './pages/1Alunos/ViewAluno';
-import EditAluno from './pages/1Alunos/EditAluno';
+import Alunos from './pages/alunos/Alunos';
+import AddNewAluno from './pages/alunos/AddNewAluno';
+import ViewAluno from './pages/alunos/ViewAluno';
+import EditAluno from './pages/alunos/EditAluno';
 
-import AlunosProspectados from './pages/2Alunos_Prospectados/AlunosProspectados';
-import AddNewAlunoProspectado from './pages/2Alunos_Prospectados/AddNewAlunoProspectado';
+import AlunosProspectados from './pages/alunos/prospectados/AlunosProspectados';
+import AddNewAlunoProspectado from './pages/alunos/prospectados/AddNewAlunoProspectado';
 
-import Professores from './pages/3Professores/Professores';
-import AddNewProfessor from './pages/3Professores/AddNewProfessor';
+import Professores from './pages/professores/Professores';
+import AddNewProfessor from './pages/professores/AddNewProfessor';
 
-import Cursos from './pages/4Cursos/Cursos';
-import AddNewCurso from './pages/4Cursos/AddNewCurso';
+import Cursos from './pages/cursos/Cursos';
+import AddNewCurso from './pages/cursos/AddNewCurso';
 
-import Turmas from './pages/5Turmas/Turmas';
-import AddNewTurma from './pages/5Turmas/AddNewTurma';
+import Turmas from './pages/turmas/Turmas';
+import AddNewTurma from './pages/turmas/AddNewTurma';
 
 import Settings from './pages/Settings';
 import Logout from './pages/Logout';
