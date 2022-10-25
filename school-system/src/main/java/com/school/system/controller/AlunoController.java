@@ -18,28 +18,28 @@ import repository.*;
 
 @RestController
 @CrossOrigin("http://localhost:3000")
-public class AlunosController {
+public class AlunoController {
 	
 	@Autowired
-	private AlunosRepository alunosRepository;
+	private AlunoRepository alunosRepository;
 	
 	@PostMapping("/add/new_aluno/add")
-	Alunos newAluno(@RequestBody Alunos newAluno) {
+	Aluno newAluno(@RequestBody Aluno newAluno) {
 		return alunosRepository.save(newAluno);
 	}
 
 	@GetMapping("/alunos")
-	List<Alunos> getAllAlunos(){
+	List<Aluno> getAllAlunos(){
 		return alunosRepository.findAll();
 	}
 	
 	@GetMapping("/alunos/{matricula}")
-	Alunos getAlunosById(@PathVariable Integer matricula) {
+	Aluno getAlunosById(@PathVariable Integer matricula) {
 		return alunosRepository.findById(matricula).orElseThrow(() -> new AlunoNotFoundException(matricula));
 	}
 	
 	@PutMapping("/alunos/{matricula}")
-	Alunos updateAlunos(@RequestBody Alunos newAluno, @PathVariable Integer matricula) {	
+	Aluno updateAlunos(@RequestBody Aluno newAluno, @PathVariable Integer matricula) {	
 		return alunosRepository.findById(matricula).map(alunos -> {
 			alunos.setNomeCompleto(newAluno.getNomeCompleto());
 			alunos.setTelefone(newAluno.getTelefone());

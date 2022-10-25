@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @ComponentScan({"controller"})
 @RequestMapping
 @EnableJpaRepositories("repository")
-public class BackendApplication {
+public class SchoolSystemApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BackendApplication.class, args);
+		SpringApplication.run(SchoolSystemApplication.class, args);
 	}
 
 }

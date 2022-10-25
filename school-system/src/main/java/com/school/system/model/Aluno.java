@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 
 @Entity
-public class Alunos{
+public class Aluno{
 	
 	@Id
 	@GeneratedValue
