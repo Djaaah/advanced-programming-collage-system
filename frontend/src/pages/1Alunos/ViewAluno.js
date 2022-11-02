@@ -1,20 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import InputMask from 'react-input-mask';
-import { CursosData } from '../4Cursos/CursosData';
-import { loadAluno } from "../../service"
+import { getTurmas, loadAluno } from "../../service"
 
 
 const ViewAluno = () => {
     const { matricula } = useParams();
 
-    const [aluno, setAluno] = useState({
-        nomeCompleto: "",
-        cpf: "",
-        endereco: "",
-        telefone: "",
-        idTurma: "",
-    });
+    const [aluno, setAluno] = useState([]);
 
     useEffect(() => {
         loadAluno(setAluno, matricula);
@@ -32,14 +25,8 @@ const ViewAluno = () => {
             <input type="number" className="form-control" id="matricula-aluno" value={aluno.matricula} placeholder="Matrícula" disabled required/>
         </div>
         <div className="col-3">
-            <label htmlFor="curso-aluno">Curso</label>
-            <select className="form-control">
-                {CursosData.map((item, index) => {
-                    return(
-                        <option key={index} value={item.value} disabled>{item.titleCurso}</option>
-                    )
-                })}
-            </select>
+            <label htmlFor="curso-aluno">ID da Turma</label>              
+            <input disabled value={aluno.idTurma} className="form-control"></input>                
         </div>
     </div>
 

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import model.*;
@@ -24,36 +25,62 @@ public class ProfessorController {
 	private ProfessorRepository professorRepository;
 	
 	@PostMapping("/add/new_prof/add")
-	Professor newProfessor(@RequestBody Professor newProfessor) {
-		return professorRepository.save(newProfessor);
+	public @ResponseBody String salvarNovoProfessor(@RequestBody Professor novoProfessor) {
+		
+		for (int i = 0; i < professorRepository.findAll().size(); i++) {
+			if(novoProfessor.getIdProfessor().equals(professorRepository.findAll().get(i).getIdProfessor())) {
+				return "ID de Professor Já Cadastrado!";
+			}
+		}
+		
+		professorRepository.save(novoProfessor);
+		return "Professor Salvo com Sucesso";
 	}
 	
 	@GetMapping("/professores")
-	List<Professor> getAllProfessor(){
+	public @ResponseBody List<Professor> obterTodosProfessores(){
 		return professorRepository.findAll();
 	}
 	
 	@GetMapping("/professor/{idProfessor}")
-	Professor getProfessorById(@PathVariable Integer idProfessor) {
+	public @ResponseBody Professor obterProfessorPorId(@PathVariable("idProfessor") Integer idProfessor) {
 		return professorRepository.findById(idProfessor).orElseThrow(/*() -> new ProfessorNotFoundException(idTurma)*/);
 	}
 	
 	@PutMapping("/professor/{idProfessor}")
-	Professor updateProfessor(@RequestBody Professor newProfessor, @PathVariable Integer idProfessor) {
-		return professorRepository.findById(idProfessor).map(professor -> {
-			professor.setNome(newProfessor.getNome());
-			professor.setTelefone(newProfessor.getTelefone());
-			professor.setValorHoraAula(newProfessor.getValorHoraAula());
-			professor.setIdTurma(newProfessor.getIdTurma());
-			return professorRepository.save(professor);
-		}).orElseThrow(/*() -> new ProfessorNotFoundException(idProfessor)*/);
+	public @ResponseBody String atualizarProfessorPorId(@RequestBody Professor novoProfessor, @PathVariable("idProfessor") Integer idProfessor) {
+		
+		if(!professorRepository.existsById(idProfessor)) {
+			/*throw new ProfessorNotFoundException(idProfessor);*/
+		}
+		
+		for (int i = 0; i < professorRepository.findAll().size(); i++) {
+			if(novoProfessor.getIdProfessor().equals(professorRepository.findAll().get(i).getIdProfessor())) {
+				return "ID de Professor Já Cadastrado!";
+			}
+		}
+		
+		Professor professor = professorRepository.findById(idProfessor).get();
+		
+		
+		professor.setNome(novoProfessor.getNome());
+		professor.setTelefone(novoProfessor.getTelefone());
+		professor.setValorHoraAula(novoProfessor.getValorHoraAula());
+		professor.setIdTurma(novoProfessor.getIdTurma());
+		
+		professorRepository.save(professor);
+		
+		return "Professor Atualizado com Sucesso";
+		
 	}
 	
 	@DeleteMapping("/professor/{idProfessor}")
-	String deleteProfessor(@PathVariable("idProfessor") Integer idProfessor) {
+	public @ResponseBody String deleteProfessor(@PathVariable("idProfessor") Integer idProfessor) {
 		/*if(!turmaRepository.existsById(idProfessor)) {
 			throw new ProfessorNotFoundException(idProfessor);
 		}*/
+		
+		professorRepository.deleteById(idProfessor);
 		
 		return "Professor de ID: " + idProfessor +" Foi deletado com Sucesso!.";
 	}

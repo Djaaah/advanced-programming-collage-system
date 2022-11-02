@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate  } from 'react-router-dom'
 import InputMask from 'react-input-mask';
-import { TurmasData } from '../5Turmas/TurmasData';
 import { getAlunos, getTurmas, inserirDadosAlunos } from "../../service"
 
 
@@ -29,12 +28,13 @@ const AddNewAluno = () => {
 
     const onSubmit = () => {
         inserirDadosAlunos(aluno);
+        getAlunos(setAlunos);
         navigate('/alunos');
     }
 
 
     useEffect(() => {
-        getTurmas(setTurmas)
+        getTurmas(setTurmas);
         getAlunos(setAlunos);
     }, [])
 

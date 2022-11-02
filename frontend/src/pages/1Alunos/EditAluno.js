@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import InputMask from 'react-input-mask';
-import { CursosData } from '../4Cursos/CursosData';
-import { atualizarDadosAlunos, loadAluno } from "../../service"
+import { atualizarDadosAlunos, loadAluno, getTurmas } from "../../service"
 
 
 const EditAluno = () => {
@@ -19,6 +18,8 @@ const EditAluno = () => {
         idTurma: "",
     });
 
+    const [turmas, setTurmas] = useState([])
+
     const { nomeCompleto, cpf, endereco, telefone, idTurma } = aluno;
 
     const onInputChange = (e) => {
@@ -31,6 +32,7 @@ const EditAluno = () => {
     }
 
     useEffect(() => {
+        getTurmas(setTurmas);
         loadAluno(setAluno, matricula);
     }, [])
 
@@ -46,11 +48,11 @@ const EditAluno = () => {
             <input type="number" className="form-control" id="matricula-aluno" value={aluno.matricula} placeholder="Matrícula" disabled required/>
         </div>
         <div className="col-3">
-            <label htmlFor="curso-aluno">Curso</label>
-            <select className="form-control">
-                {CursosData.map((item, index) => {
+            <label htmlFor="curso-aluno">ID da Turma</label>
+            <select id="idTurma" onChange={(e) => onInputChange(e)} className="form-control">
+                {turmas.map((item, index) => {
                     return(
-                        <option key={index} value={item.value}>{item.titleCurso}</option>
+                        <option key={index} value={item.idTurma} selected={aluno.idTurma === item.idTurma ? "selected" : ""}>{item.idTurma}</option>
                     )
                 })}
             </select>

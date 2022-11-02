@@ -1,11 +1,23 @@
 import {useState, useEffect} from 'react'
-import {getAlunos} from "../../service"
+import {getAlunos, getTurmas, getProfessor, getCursos, getLeads} from "../../service"
 
 
 export const DashboardData = () => {
     const [qtdMatriculados, setQtdMatriculados] = useState([]);
 
+    const[turmas, setTurmas] = useState([]);
+
+    const [profs, setProfs] = useState([]);
+
+    const [cursos, setCursos] = useState([])
+
+    const [lead, setLead] = useState([]);
+
     useEffect(() => {
+        getLeads(setLead);
+        getCursos(setCursos);
+        getProfessor(setProfs);
+        getTurmas(setTurmas);
         getAlunos(setQtdMatriculados);
     }, [])
 
@@ -19,19 +31,19 @@ export const DashboardData = () => {
         },
         {
             title: 'Alunos Prospectados',
-            data: '5',
+            data: lead.length,
         },
         {
             title: 'Professores Registrados',
-            data: '7',
+            data: profs.length,
         },
         {
             title: 'Cursos Registrados',
-            data: '1',
+            data: cursos.length,
         },
         {
             title: 'Turmas Registradas',
-            data: '7',
+            data: turmas.length,
         },
 
     ]

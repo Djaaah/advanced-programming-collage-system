@@ -1,12 +1,13 @@
 package model;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 
-
 @Entity
+
 public class Alunos{
 	
 	@Id
@@ -16,7 +17,9 @@ public class Alunos{
 	private String nomeCompleto;
 	private String telefone;
 	private String endereco;
+	
 	private String cpf;
+	
 	private int idTurma;
 	
 	public Integer getMatricula() {
