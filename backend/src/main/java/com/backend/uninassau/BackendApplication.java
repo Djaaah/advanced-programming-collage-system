@@ -9,11 +9,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
-@EntityScan(basePackages = "model")
+@EntityScan(basePackages = "com.backend.uninassau.model")
 @SpringBootApplication
-@ComponentScan({"controller"})
+@ComponentScan({"com.backend.uninassau.controller"})
 @RequestMapping
-@EnableJpaRepositories("repository")
+@EnableJpaRepositories("com.backend.uninassau.repository")
 public class BackendApplication {
 
 	public static void main(String[] args) {

@@ -1,0 +1,1046 @@
+{
+	"info": {
+		"_postman_id": "d1f356d8-eb35-4ff2-bade-8b9ed5765412",
+		"name": "Programação Avançada",
+		"description": "# Documentação feita para comprovar que a API está funcionando devidamente!\n\n### Projeto feito em Spring Boot e ReactJS no FrontEnd\n\n### FrontEnd ainda não finalizado, apenas módulos de Criação de Alunos e Leads funcionando o CRUD completo.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22999283"
+	},
+	"item": [
+		{
+			"name": "Alunos",
+			"item": [
+				{
+					"name": "Post",
+					"item": [
+						{
+							"name": "Add Alunos",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nomeCompleto\": \"Jailton Inácio dos Santos Júnior\",\r\n    \"telefone\": \"81997512774\",\r\n    \"endereco\": \"Rua José P de Oliveira, 8, Quadra D16\",\r\n    \"cpf\": \"123.456.789-99\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/alunos",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"alunos"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Teste 1 - Positivo",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nomeCompleto\": \"Jailton Inácio dos Santos Júnior\",\r\n    \"telefone\": \"81997512774\",\r\n    \"endereco\": \"Rua José P de Oliveira, 8, Quadra D16\",\r\n    \"cpf\": \"123.456.789-00\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}/add/new_aluno/add",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"add",
+												"new_aluno",
+												"add"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/plain;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "29"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 30 Nov 2022 03:51:42 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "Aluno cadastrado com Sucesso!"
+								},
+								{
+									"name": "Teste 2 - Positivo",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nomeCompleto\": \"Jailton Inácio dos Santos Júnior\",\r\n    \"telefone\": \"81997512774\",\r\n    \"endereco\": \"Rua José P de Oliveira, 8, Quadra D16\",\r\n    \"cpf\": \"123.456.789-99\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}/add/new_aluno/add",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"add",
+												"new_aluno",
+												"add"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/plain;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "29"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 30 Nov 2022 03:52:17 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "Aluno cadastrado com Sucesso!"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get",
+					"item": [
+						{
+							"name": "Ver Alunos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/alunos",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"alunos"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Teste 1 - Positivo",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/alunos",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"alunos"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 30 Nov 2022 03:52:35 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"matricula\": 5,\n        \"nomeCompleto\": \"Jailton Inácio dos Santos Júnior\",\n        \"telefone\": \"81997512774\",\n        \"endereco\": \"Rua José P de Oliveira, 8, Quadra D16\",\n        \"cpf\": \"123.456.789-00\",\n        \"idTurma\": 0\n    },\n    {\n        \"matricula\": 6,\n        \"nomeCompleto\": \"Jailton Inácio dos Santos Júnior\",\n        \"telefone\": \"81997512774\",\n        \"endereco\": \"Rua José P de Oliveira, 8, Quadra D16\",\n        \"cpf\": \"123.456.789-99\",\n        \"idTurma\": 0\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Ver Alunos por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/aluno/10",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"aluno",
+										"10"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Teste 1 - Positivo",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/alunos/6",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"alunos",
+												"6"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 30 Nov 2022 03:52:51 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"matricula\": 6,\n    \"nomeCompleto\": \"Jailton Inácio dos Santos Júnior\",\n    \"telefone\": \"81997512774\",\n    \"endereco\": \"Rua José P de Oliveira, 8, Quadra D16\",\n    \"cpf\": \"123.456.789-99\",\n    \"idTurma\": 0\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Put",
+					"item": [
+						{
+							"name": "Editar Alunos - OK",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"nomeCompleto\": \"Jailton Inácio dos Santos Júnior Editado\",\r\n        \"telefone\": \"81997512779\",\r\n        \"endereco\": \"Rua José P de Oliveira, Ouro Preto - Olinda\",\r\n        \"cpf\": \"123.076.014-86\",\r\n        \"idTurma\": 34\r\n    }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/alunos/6",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"alunos",
+										"6"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Teste 1 - Positivo",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n        \"nomeCompleto\": \"Jailton Inácio dos Santos Júnior Editado\",\r\n        \"telefone\": \"81997512779\",\r\n        \"endereco\": \"Rua José P de Oliveira, Ouro Preto - Olinda\",\r\n        \"cpf\": \"123.076.014-86\",\r\n        \"idTurma\": 34\r\n    }\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/alunos/6",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"alunos",
+												"6"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/plain;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "29"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 30 Nov 2022 03:56:22 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "Aluno Atualizado com Sucesso!"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"item": [
+						{
+							"name": "Deletar Alunos por ID - OK",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/alunos/30",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"alunos",
+										"30"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Teste 1 - Positivo",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/alunos/6",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"alunos",
+												"6"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/plain;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "47"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 30 Nov 2022 03:56:35 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "Aluno de matricula: 6 foi deletado com sucesso."
+								}
+							]
+						}
+					]
+				}
+			],
+			"description": "## Aqui ficarão os testes feitos nas requisições de Alunos"
+		},
+		{
+			"name": "Professores",
+			"item": [
+				{
+					"name": "Post",
+					"item": [
+						{
+							"name": "Add Professores",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Roberto Júnior\",\r\n    \"telefone\": \"81997512778\",\r\n    \"valorHoraAula\": 50\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/professores",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"professores"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get",
+					"item": [
+						{
+							"name": "Ver Professores",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/professores",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"professores"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ver Professores por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/professor/5",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"professor",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Put",
+					"item": [
+						{
+							"name": "Editar Professor",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Alexandre Souza Júnior\",\r\n    \"telefone\": \"81997512774\",\r\n    \"valorHoraAula\": 50,\r\n    \"idTurma\": 34\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/professores/33",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"professores",
+										"33"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"item": [
+						{
+							"name": "Deletar Professor por ID",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/professores/30",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"professores",
+										"30"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Leads",
+			"item": [
+				{
+					"name": "Post",
+					"item": [
+						{
+							"name": "Add Lead",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nomeCompleto\": \"Jailton Júnior\",\r\n    \"telefone\": \"81997512774\",\r\n    \"dataCadastro\": \"2022-10-22\",\r\n    \"status_2\": \"Aguardar\",\r\n    \"dataNovoContato\": \"2022-10-20\",\r\n    \"observacao\": \"Pode ser que assine conosco\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/leads",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"leads"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get",
+					"item": [
+						{
+							"name": "Ver Leads",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/leads",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"leads"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ver LeadsByID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/lead/96",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"lead",
+										"96"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Put",
+					"item": [
+						{
+							"name": "Editar Lead",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nomeCompleto\": \"Jailton Júnior EDITADO\",\r\n    \"telefone\": \"81997512774\",\r\n    \"dataCadastro\": \"2022-10-20\",\r\n    \"status_2\": \"Aguardar\",\r\n    \"dataNovoContato\": \"2022-10-25\",\r\n    \"observacao\": \"Pode ser que assine conosco\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/leads/98",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"leads",
+										"98"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"item": [
+						{
+							"name": "Deletar LeadByID",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/leads/30",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"leads",
+										"30"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cursos",
+			"item": [
+				{
+					"name": "Post",
+					"item": [
+						{
+							"name": "Add Curso",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nomeCurso\": \"Ciência da Computação\",\r\n    \"chAula\": 4,\r\n    \"chTotal\": 80,\r\n    \"turno\": \"Noite\",\r\n    \"valor\": 661.40,\r\n    \"seg\": 0,\r\n    \"ter\": 0,\r\n    \"qua\": 1,\r\n    \"qui\": 1,\r\n    \"sex\": 0,\r\n    \"sab\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/cursos",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"cursos"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get",
+					"item": [
+						{
+							"name": "Ver Cursos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/cursos",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"cursos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ver Cursos por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/curso/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"curso",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Put",
+					"item": [
+						{
+							"name": "Editar Curso",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"nomeCompleto\": \"Jailton Inácio dos Santos Júnior\",\r\n        \"telefone\": \"81997512774\",\r\n        \"endereco\": \"Rua José P de Oliveira, Ouro Preto - Olinda\",\r\n        \"cpf\": \"12307601481\"\r\n    }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/cursos/28",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"cursos",
+										"28"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"item": [
+						{
+							"name": "Deletar Curso Por ID",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/cursos/30",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"cursos",
+										"30"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Turmas",
+			"item": [
+				{
+					"name": "Post",
+					"item": [
+						{
+							"name": "Add Turma",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idTurma\": 0,\r\n    \"idCurso\": 31,\r\n    \"idProfessor\": 33,\r\n    \"valor\": 4500\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/turmas",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"turmas"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get",
+					"item": [
+						{
+							"name": "Ver Turmas",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/turmas",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"turmas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ver Turmas por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/turma/5",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"turma",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Put",
+					"item": [
+						{
+							"name": "Editar Turma",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"idProfessor\": 2,\r\n        \"idCurso\": 1\r\n    }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/turmas/5",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"turmas",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"item": [
+						{
+							"name": "Deletar Turma por ID",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/turmas/30",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"turmas",
+										"30"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

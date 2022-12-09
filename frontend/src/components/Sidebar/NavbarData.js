@@ -43,16 +43,4 @@ export const NavbarData = [
         icon: <HiIcons.HiDocumentReport/>,
         cName: 'nav-text',
     },
-    {
-        title: 'Settings',
-        path: '/settings',
-        icon: <BsIcons.BsFillGearFill/>,
-        cName: 'nav-text',
-    },
-    {
-        title: 'Logout',
-        path: '/logout',
-        icon: <RiIcons.RiLogoutCircleFill/>,
-        cName: 'nav-text',
-    },
 ]

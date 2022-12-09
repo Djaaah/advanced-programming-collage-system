@@ -8,11 +8,11 @@
 		<version>2.7.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.uninassau</groupId>
-	<artifactId>backend</artifactId>
+	<groupId>com.school.system</groupId>
+	<artifactId>school-system</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>backend</name>
-	<description>Demo project for Spring Boot</description>
+	<name>school-system</name>
+	<description>Sistema de Gerenciamento Escolar</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
