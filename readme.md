@@ -57,6 +57,13 @@ Siga as etapas:
 5.1° - Caso não tenha clique no link a baixo.
 ```
 - __[NodeJS](https://nodejs.org/en/download/)__
+```
+6°- Verifique se você possui o Spring Suite Tools
+```
+```
+6.1° - Caso não tenha clique no link a baixo.
+```
+- __[STS](https://spring.io/tools)__
 ### 📦 Implantação
 Para conseguir implantar o projeto siga as seguintes recomendações:
 ```
@@ -82,11 +89,7 @@ Para conseguir implantar o projeto siga as seguintes recomendações:
 4.2° - Após a pasta nodeModules ser baixada inicie a aplicação com o comando "npm start" e aguarde alguns segundos.
 ```
 ```
-5° - Caso deseje usa o postman abra-o e importe as collections na pasta dentro de testes.
-```
-```
-6° - Abra a funcionalidade no postman que deseja testar e envie a solicitação.
-Para conferir os endpoints e como aplicar confira o DOCUMENTAÇÃO SWAGGER da api.
+5° - Caso deseje usar o postman abra-o e importe as collections na pasta dentro de testes.
 ```
 ### 📌 Versão
 Nós usamos [GIT](https://git-scm.com/downloads) para controle de versão no [GITHUB](https://github.com/Djaaah/advanced-programming-collage-system).
